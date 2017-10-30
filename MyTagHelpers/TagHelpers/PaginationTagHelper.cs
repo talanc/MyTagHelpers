@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MyTagHelpers.TagHelpers
 {
-    [HtmlTargetElement(Attributes = AttributeAttributeName)]
-    [HtmlTargetElement(Attributes = CurrentAttributeName)]
-    [HtmlTargetElement(Attributes = FirstAttributeName)]
-    [HtmlTargetElement(Attributes = LastAttributeName)]
-    [HtmlTargetElement(Attributes = RouteValuesPrefix + "*")]
-    [HtmlTargetElement(Attributes = RouteValuesDictionaryName)]
+    [HtmlTargetElement("pagination", Attributes = AttributeAttributeName)]
+    [HtmlTargetElement("pagination", Attributes = CurrentAttributeName)]
+    [HtmlTargetElement("pagination", Attributes = FirstAttributeName)]
+    [HtmlTargetElement("pagination", Attributes = LastAttributeName)]
+    [HtmlTargetElement("pagination", Attributes = RouteValuesPrefix + "*")]
+    [HtmlTargetElement("pagination", Attributes = RouteValuesDictionaryName)]
     public class PaginationTagHelper : TagHelper
     {
         private const string AttributeAttributeName = "page-attribute";
@@ -30,7 +30,7 @@ namespace MyTagHelpers.TagHelpers
             _htmlHelper = htmlHelper;
             PageRouteValues = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         }
-        
+
         [HtmlAttributeName(AttributeAttributeName)]
         public string PageAttribute { get; set; }
 
