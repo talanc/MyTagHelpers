@@ -1,0 +1,10 @@
+﻿@page
+@model PaginationModel
+@{
+    ViewData["Title"] = "Pagination Samples";
+}
+<h2>@ViewData["Title"]</h2>
+
+<h4>Current Page = @Model.CurrentPage</h4>
+
+<pagination page-attribute="currentPage" page-current="@Model.CurrentPage" page-first="1" page-last="10">Hello</pagination>
