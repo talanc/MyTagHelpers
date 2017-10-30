@@ -5,6 +5,18 @@
 }
 <h2>@ViewData["Title"]</h2>
 
-<h4>Current Page = @Model.CurrentPage</h4>
 
-<pagination page-attribute="currentPage" page-current="@Model.CurrentPage" page-first="1" page-last="10">Hello</pagination>
+@if (Model.PageNumber.HasValue)
+{
+    <h4>PageNumber = @Model.PageNumber.Value</h4>
+}
+else
+{
+    <h4>PageNumber = undefined</h4>
+}
+
+<h4>Value1 = @(Model.Value1 ?? "null")</h4>
+
+<h4>Value2 = @(Model.Value2 ?? "null")</h4>
+
+<pagination page-attribute="pageNumber" page-route-value1="aaa" page-route-value2="bbb" page-current="@(Model.PageNumber.HasValue ? Model.PageNumber.Value : 1)" page-first="1" page-last="10"></pagination>

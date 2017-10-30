@@ -9,11 +9,17 @@ namespace MyTagHelpers.Pages
 {
     public class PaginationModel : PageModel
     {
-        public int CurrentPage { get; set; }
+        public int? PageNumber { get; set; }
 
-        public void OnGet(int currentPage = 1)
+        public string Value1 { get; set; }
+
+        public string Value2 { get; set; }
+
+        public void OnGet(int? pageNumber = null, string value1 = null, string value2 = null)
         {
-            CurrentPage = currentPage;
+            PageNumber = pageNumber;
+            Value1 = value1;
+            Value2 = value2;
         }
     }
 }
