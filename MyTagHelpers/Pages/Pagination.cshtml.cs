@@ -10,6 +10,7 @@ namespace MyTagHelpers.Pages
     public class PaginationModel : PageModel
     {
         public int? PageNumber { get; set; }
+        public int PageNumberValue => (PageNumber.HasValue ? PageNumber.Value : 1);
 
         public string Value1 { get; set; }
 

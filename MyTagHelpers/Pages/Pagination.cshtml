@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Pagination Samples";
 }
-<h2>@ViewData["Title"]</h2>
+<h1>@ViewData["Title"]</h1>
 
 
 @if (Model.PageNumber.HasValue)
@@ -19,4 +19,11 @@ else
 
 <h4>Value2 = @(Model.Value2 ?? "null")</h4>
 
-<pagination page-attribute="pageNumber" page-route-value1="aaa" page-route-value2="bbb" page-current="@(Model.PageNumber.HasValue ? Model.PageNumber.Value : 1)" page-first="1" page-last="10"></pagination>
+<h2>Basic</h2>
+
+<pagination page-attribute="pageNumber" page-route-value1="aaa" page-route-value2="bbb" page-num=@Model.PageNumberValue page-last="10"></pagination>
+
+<h2>Truncated</h2>
+
+<pagination page-attribute="pageNumber" page-num=@Model.PageNumberValue page-last="50"></pagination>
+
